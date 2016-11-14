@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button lowerButton;
     Button higherButton;
     Button correctButton;
+    Button resetButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lowerButton = (Button)findViewById(R.id.BT_Lower);
         higherButton = (Button)findViewById(R.id.BT_Higher);
         correctButton = (Button)findViewById(R.id.BT_Correct);
+        resetButton = (Button)findViewById(R.id.BT_Reset);
 
 ////------------------------------------------------------------------
 ////----------------Set On Click Listener-----------------------------
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lowerButton.setOnClickListener(this);
         higherButton.setOnClickListener(this);
         correctButton.setOnClickListener(this);
+        resetButton.setOnClickListener(this);
 
 ////------------------------------------------------------------------
         displayView.setText(String.valueOf(halfNumMethod()));
@@ -55,14 +58,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch(view.getId()){
             case (R.id.BT_Lower):
-
                 max = halfNumMethod();
                 displayView.setText(String.valueOf(halfNumMethod()));
 
                 break;
 
             case (R.id.BT_Higher):
-
                 min = halfNumMethod();
                 displayView.setText(String.valueOf(halfNumMethod()));
 
@@ -73,6 +74,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 displayView.setText(correctText);
                 min = 0;
                 max = 10000;
+
+                break;
+
+            case (R.id.BT_Reset):
+                String resetText = "0";
+                displayView.setText(resetText);
+                min = 0;
+                max = 10000;
+
                 break;
         }
     }
@@ -85,11 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private int halfNumMethod(){
         int halfMethod;
-
         halfMethod = ((max - min)/2);
-//        displayView.setText(halfMethod);
         return (min + halfMethod);
-//
     }
 
 }
