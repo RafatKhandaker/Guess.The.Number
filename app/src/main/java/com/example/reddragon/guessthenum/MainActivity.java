@@ -1,4 +1,4 @@
-package com.example.reddragon.guessthenumber;
+package com.example.reddragon.guessthenum;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-  //----------------Define Scope--------------------------------
+    //----------------Define Scope--------------------------------
 
         guessSize = 10000;
 
@@ -38,15 +38,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         higherButton = (Button)findViewById(R.id.BT_Higher);
         correctButton = (Button)findViewById(R.id.BT_Correct);
 
-//------------------------------------------------------------------
-//----------------Set On Click Listener-----------------------------
+////------------------------------------------------------------------
+////----------------Set On Click Listener-----------------------------
 
         lowerButton.setOnClickListener(this);
         higherButton.setOnClickListener(this);
         correctButton.setOnClickListener(this);
 
-//------------------------------------------------------------------
-        displayView.setText(halfNumMethod());
+////------------------------------------------------------------------
+        displayView.setText(String.valueOf(halfNumMethod()));
 
     }
 
@@ -57,19 +57,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case (R.id.BT_Lower):
 
                 max = halfNumMethod();
-                displayView.setText(halfNumMethod());
+                displayView.setText(String.valueOf(halfNumMethod()));
 
                 break;
 
             case (R.id.BT_Higher):
 
                 min = halfNumMethod();
-                displayView.setText(halfNumMethod());
+                displayView.setText(String.valueOf(halfNumMethod()));
 
                 break;
 
             case (R.id.BT_Correct):
-                displayView.setText(" YAY I GUESSED CORRECT ! Retry?");
+                String correctText = " YAY! ";
+                displayView.setText(correctText);
                 min = 0;
                 max = 10000;
                 break;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         halfMethod = ((max - min)/2);
 //        displayView.setText(halfMethod);
         return (min + halfMethod);
-
+//
     }
 
 }

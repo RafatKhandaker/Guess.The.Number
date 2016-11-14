@@ -1,4 +1,4 @@
-package com.example.reddragon.guessthenumber;
+package com.example.reddragon.guessthenum;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.reddragon.guessthenumber;
+package com.example.reddragon.guessthenum;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.reddragon.guessthenumber", appContext.getPackageName());
+        assertEquals("com.example.reddragon.guessthenum", appContext.getPackageName());
     }
 }
